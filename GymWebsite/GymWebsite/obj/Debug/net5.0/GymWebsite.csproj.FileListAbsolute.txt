@@ -170,11 +170,6 @@ C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\UserProfiles\Details.cshtml.g.cs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\UserProfiles\Edit.cshtml.g.cs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\UserProfiles\Index.cshtml.g.cs
-C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\TrainingBlocks\Create.cshtml.g.cs
-C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\TrainingBlocks\Delete.cshtml.g.cs
-C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\TrainingBlocks\Details.cshtml.g.cs
-C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\TrainingBlocks\Edit.cshtml.g.cs
-C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\TrainingBlocks\Index.cshtml.g.cs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\Workouts\Create.cshtml.g.cs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\Workouts\Delete.cshtml.g.cs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\Workouts\Details.cshtml.g.cs
@@ -186,3 +181,8 @@ C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\Exercises\Edit.cshtml.g.cs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\Exercises\Index.cshtml.g.cs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\Users\UserList.cshtml.g.cs
+C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\TrainingBlocks\Create.cshtml.g.cs
+C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\TrainingBlocks\Delete.cshtml.g.cs
+C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\TrainingBlocks\Details.cshtml.g.cs
+C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\TrainingBlocks\Edit.cshtml.g.cs
+C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\TrainingBlocks\Index.cshtml.g.cs

@@ -37,7 +37,7 @@ namespace GymWebsite.Pages.TrainingBlocks
             {
                 return NotFound();
             }
-           ViewData["UserId"] = new SelectList(_context.Set<User>(), "ID", "ID");
+           ViewData["UserId"] = new SelectList(_context.User, "ID", "ID");
             return Page();
         }
 

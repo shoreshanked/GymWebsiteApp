@@ -10,6 +10,8 @@ namespace GymWebsite.Model
     {
         public int ID { get; set; }
 
+        public string BlockName { get; set; }
+
         [ForeignKey("User")]
         public  int UserId { get; set; }
 

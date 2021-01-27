@@ -32,6 +32,7 @@
                 @Html.DisplayFor(modelItem => item.TrainingBlock.ID)
             </td>
             <td>
+                <a asp-page="/Exercises/Index" asp-route-id="@item.WorkoutID">Add Exercise</a> |
                 <a asp-page="./Edit" asp-route-id="@item.WorkoutID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.WorkoutID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.WorkoutID">Delete</a>
