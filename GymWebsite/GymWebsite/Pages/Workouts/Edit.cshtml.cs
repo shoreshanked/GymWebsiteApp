@@ -31,13 +31,13 @@ namespace GymWebsite.Pages.Workouts
             }
 
             Workout = await _context.Workout
-                .Include(w => w.TrainingBlock).FirstOrDefaultAsync(m => m.WorkoutID == id);
+                .Include(w => w.TrainingBlock).FirstOrDefaultAsync(m => m.TrainingBlockId == id);
 
             if (Workout == null)
             {
                 return NotFound();
             }
-           ViewData["WorkoutID"] = new SelectList(_context.TrainingBlock, "ID", "ID");
+           ViewData["TrainingBlockId"] = new SelectList(_context.TrainingBlock, "ID", "ID");
             return Page();
         }
 
@@ -58,7 +58,7 @@ namespace GymWebsite.Pages.Workouts
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!WorkoutExists(Workout.WorkoutID))
+                if (!WorkoutExists(Workout.TrainingBlockId))
                 {
                     return NotFound();
                 }
@@ -73,7 +73,7 @@ namespace GymWebsite.Pages.Workouts
 
         private bool WorkoutExists(int id)
         {
-            return _context.Workout.Any(e => e.WorkoutID == id);
+            return _context.Workout.Any(e => e.TrainingBlockId == id);
         }
     }
 }

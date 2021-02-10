@@ -23,7 +23,8 @@ namespace GymWebsite.Pages.Exercises
 
         public async Task OnGetAsync()
         {
-            Exercise = await _context.Exercise.ToListAsync();
+            Exercise = await _context.Exercise
+                .Include(e => e.Workout).ToListAsync();
         }
     }
 }

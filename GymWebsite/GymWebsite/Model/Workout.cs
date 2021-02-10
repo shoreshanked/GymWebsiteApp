@@ -8,8 +8,10 @@ namespace GymWebsite.Model
 {
     public class Workout
     {
+        public int ID { get; set; }
+
         [ForeignKey("TrainingBlock")]
-        public int WorkoutID { get; set; }
+        public int TrainingBlockId { get; set; }
 
         public string WorkoutName { get; set; }
 

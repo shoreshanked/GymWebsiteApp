@@ -28,7 +28,8 @@ namespace GymWebsite.Pages.Exercises
                 return NotFound();
             }
 
-            Exercise = await _context.Exercise.FirstOrDefaultAsync(m => m.ExerciseID == id);
+            Exercise = await _context.Exercise
+                .Include(e => e.Workout).FirstOrDefaultAsync(m => m.ID == id);
 
             if (Exercise == null)
             {

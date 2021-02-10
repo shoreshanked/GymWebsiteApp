@@ -2,7 +2,7 @@
 
 namespace GymWebsite.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class GymWebsite4 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,6 +27,7 @@ namespace GymWebsite.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    BlockName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -64,15 +65,17 @@ namespace GymWebsite.Migrations
                 name: "Workout",
                 columns: table => new
                 {
-                    WorkoutID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TrainingBlockId = table.Column<int>(type: "int", nullable: false),
                     WorkoutName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Workout", x => x.WorkoutID);
+                    table.PrimaryKey("PK_Workout", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Workout_TrainingBlock_WorkoutID",
-                        column: x => x.WorkoutID,
+                        name: "FK_Workout_TrainingBlock_TrainingBlockId",
+                        column: x => x.TrainingBlockId,
                         principalTable: "TrainingBlock",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
@@ -82,34 +85,39 @@ namespace GymWebsite.Migrations
                 name: "Exercise",
                 columns: table => new
                 {
-                    ExerciseID = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    WorkoutId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Reps = table.Column<int>(type: "int", nullable: false),
                     Sets = table.Column<int>(type: "int", nullable: false),
-                    Weight = table.Column<double>(type: "float", nullable: false),
-                    WorkoutID = table.Column<int>(type: "int", nullable: true)
+                    Weight = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Exercise", x => x.ExerciseID);
+                    table.PrimaryKey("PK_Exercise", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Exercise_Workout_WorkoutID",
-                        column: x => x.WorkoutID,
+                        name: "FK_Exercise_Workout_WorkoutId",
+                        column: x => x.WorkoutId,
                         principalTable: "Workout",
-                        principalColumn: "WorkoutID",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Exercise_WorkoutID",
+                name: "IX_Exercise_WorkoutId",
                 table: "Exercise",
-                column: "WorkoutID");
+                column: "WorkoutId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TrainingBlock_UserId",
                 table: "TrainingBlock",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Workout_TrainingBlockId",
+                table: "Workout",
+                column: "TrainingBlockId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

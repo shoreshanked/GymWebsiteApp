@@ -1,4 +1,4 @@
-﻿var ctx = document.getElementById('myChart').getContext('2d');
+﻿var ctx = document.getElementByID('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -12,7 +12,7 @@ var myChart = new Chart(ctx, {
             borderColor: [
                 'rgba(255, 99, 132, 1)',
             ],
-            borderWidth: 3
+            borderWIDth: 3
             },
             {
                 label: 'Jonny Bench Max (kg)',
@@ -23,7 +23,7 @@ var myChart = new Chart(ctx, {
                 borderColor: [
                     'rgba(54, 162, 235, 1)',
                 ],
-                borderWidth: 3
+                borderWIDth: 3
             },
             {
                 label: 'Alex Bench Max (kg)',
@@ -34,7 +34,7 @@ var myChart = new Chart(ctx, {
                 borderColor: [
                     'rgba(255, 206, 86, 1)',
                 ],
-                borderWidth: 3
+                borderWIDth: 3
             }]
     },
     options: {

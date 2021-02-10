@@ -30,12 +30,14 @@ namespace GymWebsite.Pages.Exercises
                 return NotFound();
             }
 
-            Exercise = await _context.Exercise.FirstOrDefaultAsync(m => m.ExerciseID == id);
+            Exercise = await _context.Exercise
+                .Include(e => e.Workout).FirstOrDefaultAsync(m => m.ID == id);
 
             if (Exercise == null)
             {
                 return NotFound();
             }
+           ViewData["WorkoutId"] = new SelectList(_context.Workout, "ID", "ID");
             return Page();
         }
 
@@ -56,7 +58,7 @@ namespace GymWebsite.Pages.Exercises
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ExerciseExists(Exercise.ExerciseID))
+                if (!ExerciseExists(Exercise.ID))
                 {
                     return NotFound();
                 }
@@ -71,7 +73,7 @@ namespace GymWebsite.Pages.Exercises
 
         private bool ExerciseExists(int id)
         {
-            return _context.Exercise.Any(e => e.ExerciseID == id);
+            return _context.Exercise.Any(e => e.ID == id);
         }
     }
 }
