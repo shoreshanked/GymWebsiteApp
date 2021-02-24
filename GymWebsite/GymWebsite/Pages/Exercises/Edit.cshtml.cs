@@ -37,7 +37,7 @@ namespace GymWebsite.Pages.Exercises
             {
                 return NotFound();
             }
-           ViewData["WorkoutID"] = new SelectList(_context.Workout, "WorkoutID", "WorkoutID");
+           ViewData["WorkoutName"] = new SelectList(_context.Workout, "WorkoutID", "WorkoutName");
             return Page();
         }
 

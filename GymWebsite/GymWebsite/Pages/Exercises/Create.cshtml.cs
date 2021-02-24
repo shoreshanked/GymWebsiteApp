@@ -21,12 +21,15 @@ namespace GymWebsite.Pages.Exercises
 
         public IActionResult OnGet()
         {
-        ViewData["WorkoutID"] = new SelectList(_context.Workout, "WorkoutID", "WorkoutID");
+        ViewData["WorkoutName"] = new SelectList(_context.Workout, "WorkoutID", "WorkoutName");
+            
             return Page();
         }
 
         [BindProperty]
         public Exercise Exercise { get; set; }
+
+        
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

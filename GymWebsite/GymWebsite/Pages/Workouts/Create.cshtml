@@ -14,8 +14,8 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Workout.TrainingBlockID" class="control-label"></label>
-                <select asp-for="Workout.TrainingBlockID" class ="form-control" asp-items="ViewBag.TrainingBlockID"></select>
+                <label asp-for="Workout.TrainingBlock.BlockName" class="control-label"></label>
+                <select asp-for="Workout.TrainingBlockID" class ="form-control" asp-items="ViewBag.BlockName"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Workout.WorkoutName" class="control-label"></label>
