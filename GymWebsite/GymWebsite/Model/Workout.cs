@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace GymWebsite.Model
 {
+
     public class Workout
     {
-        public int ID { get; set; }
+        public int WorkoutID { get; set; }
 
-        [ForeignKey("TrainingBlock")]
-        public int TrainingBlockId { get; set; }
+        public int TrainingBlockID { get; set; }
 
         public string WorkoutName { get; set; }
 
-        public virtual List<Exercise> Exercises { get; set; }
+        public ICollection<Exercise> Exercises { get; set; }
 
-        public virtual TrainingBlock TrainingBlock { get; set; }
+        public TrainingBlock TrainingBlock { get; set; }
 
     }
 }

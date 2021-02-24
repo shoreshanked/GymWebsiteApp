@@ -31,13 +31,13 @@ namespace GymWebsite.Pages.UserProfiles
             }
 
             UserProfile = await _context.UserProfile
-                .Include(u => u.User).FirstOrDefaultAsync(m => m.UserProfileId == id);
+                .Include(u => u.User).FirstOrDefaultAsync(m => m.UserProfileID == id);
 
             if (UserProfile == null)
             {
                 return NotFound();
             }
-           ViewData["UserProfileId"] = new SelectList(_context.Set<User>(), "ID", "ID");
+           ViewData["UserID"] = new SelectList(_context.User, "ID", "ID");
             return Page();
         }
 
@@ -58,7 +58,7 @@ namespace GymWebsite.Pages.UserProfiles
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserProfileExists(UserProfile.UserProfileId))
+                if (!UserProfileExists(UserProfile.UserProfileID))
                 {
                     return NotFound();
                 }
@@ -73,7 +73,7 @@ namespace GymWebsite.Pages.UserProfiles
 
         private bool UserProfileExists(int id)
         {
-            return _context.UserProfile.Any(e => e.UserProfileId == id);
+            return _context.UserProfile.Any(e => e.UserProfileID == id);
         }
     }
 }

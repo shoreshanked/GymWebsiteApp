@@ -21,7 +21,7 @@ namespace GymWebsite.Pages.UserProfiles
 
         public IActionResult OnGet()
         {
-        ViewData["UserProfileId"] = new SelectList(_context.Set<User>(), "ID", "ID");
+        ViewData["UserID"] = new SelectList(_context.User, "ID", "ID");
             return Page();
         }
 

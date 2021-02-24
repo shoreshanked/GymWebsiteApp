@@ -10,11 +10,11 @@ using GymWebsite.Model;
 
 namespace GymWebsite.Pages.Users
 {
-    public class UserListModel : PageModel
+    public class IndexModel : PageModel
     {
         private readonly GymWebsite.Data.GymWebsiteContext _context;
 
-        public UserListModel(GymWebsite.Data.GymWebsiteContext context)
+        public IndexModel(GymWebsite.Data.GymWebsiteContext context)
         {
             _context = context;
         }

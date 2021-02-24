@@ -29,7 +29,7 @@ namespace GymWebsite.Pages.TrainingBlocks
             }
 
             TrainingBlock = await _context.TrainingBlock
-                .Include(t => t.User).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(t => t.User).FirstOrDefaultAsync(m => m.TrainingBlockID == id);
 
             if (TrainingBlock == null)
             {

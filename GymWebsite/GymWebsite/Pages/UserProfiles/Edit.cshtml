@@ -13,7 +13,12 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="UserProfile.UserProfileId" />
+            <input type="hidden" asp-for="UserProfile.UserProfileID" />
+            <div class="form-group">
+                <label asp-for="UserProfile.UserID" class="control-label"></label>
+                <select asp-for="UserProfile.UserID" class="form-control" asp-items="ViewBag.UserID"></select>
+                <span asp-validation-for="UserProfile.UserID" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="UserProfile.Height" class="control-label"></label>
                 <input asp-for="UserProfile.Height" class="form-control" />

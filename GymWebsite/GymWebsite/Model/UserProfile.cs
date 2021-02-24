@@ -8,8 +8,9 @@ namespace GymWebsite.Model
 {
     public class UserProfile
     {
-        [ForeignKey("User")]
-        public int UserProfileId { get; set; }
+        public int UserProfileID { get; set; }
+
+        public int UserID { get; set; }
 
         public double Height { get; set; }
 
@@ -17,7 +18,7 @@ namespace GymWebsite.Model
 
         public string Username { get; set; }
 
-        public virtual User User { get; set; }
+        public User User { get; set; }
 
 
     }

@@ -9,10 +9,9 @@ namespace GymWebsite.Model
     public class Exercise
     {
         
-        public int ID { get; set; }
+        public int ExerciseID { get; set; }
 
-        [ForeignKey("Workout")]
-        public int WorkoutId { get; set; }
+        public int WorkoutID { get; set; }
 
         public string Name { get; set; }
 
@@ -22,6 +21,6 @@ namespace GymWebsite.Model
 
         public double Weight { get; set; }
 
-        public virtual Workout Workout { get; set; }
+        public Workout Workout { get; set; }
     }
 }

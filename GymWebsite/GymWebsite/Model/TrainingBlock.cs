@@ -8,14 +8,15 @@ namespace GymWebsite.Model
 {
     public class TrainingBlock
     {
-        public int ID { get; set; }
+        public int TrainingBlockID { get; set; }
 
         public string BlockName { get; set; }
 
-        [ForeignKey("User")]
-        public  int UserId { get; set; }
+        public  int UserID { get; set; }
 
-        public virtual User User { get; set; }
+        public User User { get; set; }
+
+        public ICollection<Workout> Workouts { get; set; }
     }
 }
 

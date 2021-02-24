@@ -21,7 +21,7 @@ namespace GymWebsite.Pages.TrainingBlocks
 
         public IActionResult OnGet()
         {
-        ViewData["UserId"] = new SelectList(_context.User, "ID", "FirstName");
+        ViewData["UserID"] = new SelectList(_context.User, "ID", "ID");
             return Page();
         }
 

@@ -29,13 +29,12 @@
                 @Html.DisplayFor(modelItem => item.WorkoutName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TrainingBlock.BlockName)
+                @Html.DisplayFor(modelItem => item.TrainingBlock.TrainingBlockID)
             </td>
             <td>
-                <a asp-page="/Exercises/Index" asp-route-id="@item.TrainingBlockId">Add Exercise</a> |
-                <a asp-page="./Edit" asp-route-id="@item.TrainingBlockId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.TrainingBlockId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.TrainingBlockId">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.WorkoutID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.WorkoutID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.WorkoutID">Delete</a>
             </td>
         </tr>
 }

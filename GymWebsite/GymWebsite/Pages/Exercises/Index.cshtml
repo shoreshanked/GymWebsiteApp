@@ -47,12 +47,12 @@
                 @Html.DisplayFor(modelItem => item.Weight)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Workout.WorkoutName)
+                @Html.DisplayFor(modelItem => item.Workout.WorkoutID)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.ExerciseID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ExerciseID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ExerciseID">Delete</a>
             </td>
         </tr>
 }

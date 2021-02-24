@@ -14,16 +14,16 @@ namespace GymWebsite.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.2");
+                .HasAnnotation("ProductVersion", "5.0.3")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("GymWebsite.Model.Exercise", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("ExerciseID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -37,32 +37,32 @@ namespace GymWebsite.Migrations
                     b.Property<double>("Weight")
                         .HasColumnType("float");
 
-                    b.Property<int>("WorkoutId")
+                    b.Property<int>("WorkoutID")
                         .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.HasKey("ExerciseID");
 
-                    b.HasIndex("WorkoutId");
+                    b.HasIndex("WorkoutID");
 
                     b.ToTable("Exercise");
                 });
 
             modelBuilder.Entity("GymWebsite.Model.TrainingBlock", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("TrainingBlockID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("BlockName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("UserID")
                         .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.HasKey("TrainingBlockID");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserID");
 
                     b.ToTable("TrainingBlock");
                 });
@@ -72,7 +72,7 @@ namespace GymWebsite.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -90,11 +90,16 @@ namespace GymWebsite.Migrations
 
             modelBuilder.Entity("GymWebsite.Model.UserProfile", b =>
                 {
-                    b.Property<int>("UserProfileId")
-                        .HasColumnType("int");
+                    b.Property<int>("UserProfileID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("Height")
                         .HasColumnType("float");
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
 
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
@@ -102,27 +107,29 @@ namespace GymWebsite.Migrations
                     b.Property<double>("Weight")
                         .HasColumnType("float");
 
-                    b.HasKey("UserProfileId");
+                    b.HasKey("UserProfileID");
+
+                    b.HasIndex("UserID");
 
                     b.ToTable("UserProfile");
                 });
 
             modelBuilder.Entity("GymWebsite.Model.Workout", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("WorkoutID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("TrainingBlockId")
+                    b.Property<int>("TrainingBlockID")
                         .HasColumnType("int");
 
                     b.Property<string>("WorkoutName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("WorkoutID");
 
-                    b.HasIndex("TrainingBlockId");
+                    b.HasIndex("TrainingBlockID");
 
                     b.ToTable("Workout");
                 });
@@ -131,7 +138,7 @@ namespace GymWebsite.Migrations
                 {
                     b.HasOne("GymWebsite.Model.Workout", "Workout")
                         .WithMany("Exercises")
-                        .HasForeignKey("WorkoutId")
+                        .HasForeignKey("WorkoutID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -141,8 +148,8 @@ namespace GymWebsite.Migrations
             modelBuilder.Entity("GymWebsite.Model.TrainingBlock", b =>
                 {
                     b.HasOne("GymWebsite.Model.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
+                        .WithMany("TrainingBlocks")
+                        .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -152,8 +159,8 @@ namespace GymWebsite.Migrations
             modelBuilder.Entity("GymWebsite.Model.UserProfile", b =>
                 {
                     b.HasOne("GymWebsite.Model.User", "User")
-                        .WithOne("Profile")
-                        .HasForeignKey("GymWebsite.Model.UserProfile", "UserProfileId")
+                        .WithMany()
+                        .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -163,17 +170,22 @@ namespace GymWebsite.Migrations
             modelBuilder.Entity("GymWebsite.Model.Workout", b =>
                 {
                     b.HasOne("GymWebsite.Model.TrainingBlock", "TrainingBlock")
-                        .WithMany()
-                        .HasForeignKey("TrainingBlockId")
+                        .WithMany("Workouts")
+                        .HasForeignKey("TrainingBlockID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("TrainingBlock");
                 });
 
+            modelBuilder.Entity("GymWebsite.Model.TrainingBlock", b =>
+                {
+                    b.Navigation("Workouts");
+                });
+
             modelBuilder.Entity("GymWebsite.Model.User", b =>
                 {
-                    b.Navigation("Profile");
+                    b.Navigation("TrainingBlocks");
                 });
 
             modelBuilder.Entity("GymWebsite.Model.Workout", b =>

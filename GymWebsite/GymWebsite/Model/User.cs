@@ -17,6 +17,6 @@ namespace GymWebsite.Model
 
         private string Password { get; set; }
 
-        public virtual UserProfile Profile { get; set; }
+        public ICollection<TrainingBlock> TrainingBlocks { get; set; }
     }
 }

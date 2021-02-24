@@ -29,7 +29,7 @@ namespace GymWebsite.Pages.UserProfiles
             }
 
             UserProfile = await _context.UserProfile
-                .Include(u => u.User).FirstOrDefaultAsync(m => m.UserProfileId == id);
+                .Include(u => u.User).FirstOrDefaultAsync(m => m.UserProfileID == id);
 
             if (UserProfile == null)
             {

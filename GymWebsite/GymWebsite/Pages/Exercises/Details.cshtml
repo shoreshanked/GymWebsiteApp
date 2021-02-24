@@ -39,11 +39,11 @@
             @Html.DisplayNameFor(model => model.Exercise.Workout)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Exercise.Workout.ID)
+            @Html.DisplayFor(model => model.Exercise.Workout.WorkoutID)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Exercise.ID">Edit</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.Exercise.ExerciseID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>
