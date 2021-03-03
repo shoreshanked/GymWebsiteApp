@@ -19,21 +19,29 @@ namespace GymWebsite.Pages.Exercises
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int? id)
         {
-        ViewData["WorkoutName"] = new SelectList(_context.Workout, "WorkoutID", "WorkoutName");
-            
+        TempData["id"] = id;
+        //ViewData["WorkoutName"] = new SelectList(_context.Workout, "WorkoutID", "WorkoutName");
+
+        var workout = _context.Workout.FirstOrDefault(w => w.WorkoutID == id);
+        ViewData["WorkoutName"] = workout.WorkoutName;
+        
+
             return Page();
         }
 
         [BindProperty]
         public Exercise Exercise { get; set; }
 
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        //
+        //public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int id)
         {
+            Exercise.WorkoutID = id;
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -42,7 +50,7 @@ namespace GymWebsite.Pages.Exercises
             _context.Exercise.Add(Exercise);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { id = id });
         }
     }
 }

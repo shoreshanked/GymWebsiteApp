@@ -21,10 +21,22 @@ namespace GymWebsite.Pages.Exercises
 
         public IList<Exercise> Exercise { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int? id)
         {
-            Exercise = await _context.Exercise
-                .Include(e => e.Workout).ToListAsync();
+            if (id != null)
+            {
+                Exercise = await _context.Exercise
+                                .Include(e => e.Workout)
+                                .Where(w => w.WorkoutID == id)
+                                .ToListAsync();
+
+            }
+            else
+            {
+                Exercise = await _context.Exercise
+                                .Include(e => e.Workout).ToListAsync();
+            }
+           
         }
     }
 }
