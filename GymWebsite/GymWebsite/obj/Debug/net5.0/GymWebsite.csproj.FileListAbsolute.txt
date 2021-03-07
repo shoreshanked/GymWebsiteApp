@@ -190,3 +190,4 @@ C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\Workouts\Details.cshtml.g.cs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\Workouts\Edit.cshtml.g.cs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\Workouts\Index.cshtml.g.cs
+C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\Razor\Pages\Login.cshtml.g.cs

@@ -5,10 +5,14 @@
     ViewData["Title"] = "Index";
 }
 
+<head>
+    <script src="https://kit.fontawesome.com/a7acdedb07.js" crossorigin="anonymous"></script>
+</head>
+
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Create New Exercise</a>
 </p>
 <table class="table">
     <thead>
@@ -50,9 +54,9 @@
                 @Html.DisplayFor(modelItem => item.Workout.WorkoutName)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ExerciseID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ExerciseID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ExerciseID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.ExerciseID"><i class="fas fa-edit fa-2x pr-3 text-black-50"></i></a>
+                <a asp-page="./Details" asp-route-id="@item.ExerciseID"><i class="fas fa-info-circle fa-2x pr-4 text-black-50"></i></a>
+                <a asp-page="./Delete" asp-route-id="@item.ExerciseID"><i class="fas fa-trash-alt fa-2x text-black-50"></i></a>
             </td>
         </tr>
 }

@@ -29,14 +29,13 @@ namespace GymWebsite.Pages.Exercises
                                 .Include(e => e.Workout)
                                 .Where(w => w.WorkoutID == id)
                                 .ToListAsync();
-
             }
             else
             {
                 Exercise = await _context.Exercise
                                 .Include(e => e.Workout).ToListAsync();
             }
-           
         }
+
     }
 }

@@ -21,12 +21,20 @@ namespace GymWebsite.Pages.Exercises
 
         public IActionResult OnGet(int? id)
         {
-        TempData["id"] = id;
-        //ViewData["WorkoutName"] = new SelectList(_context.Workout, "WorkoutID", "WorkoutName");
 
-        var workout = _context.Workout.FirstOrDefault(w => w.WorkoutID == id);
-        ViewData["WorkoutName"] = workout.WorkoutName;
-        
+            if (id != null)
+            {
+                TempData["id"] = id;  
+
+                var workout = _context.Workout.FirstOrDefault(w => w.WorkoutID == id);
+                ViewData["WorkoutName"] = workout.WorkoutName;
+            }
+            else
+            {
+                // if the ID is null then we need to hide the text input in HTML and show a select list for them to choose manually, using the below
+                //ViewData["WorkoutName"] = new SelectList(_context.Workout, "WorkoutID", "WorkoutName");
+            }
+
 
             return Page();
         }

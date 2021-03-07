@@ -5,10 +5,14 @@
     ViewData["Title"] = "Index";
 }
 
+<head>
+    <script src="https://kit.fontawesome.com/a7acdedb07.js" crossorigin="anonymous"></script>
+</head>
+
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Create New Workout</a>
 </p>
 <table class="table">
     <thead>
@@ -32,10 +36,10 @@
                 @Html.DisplayFor(modelItem => item.TrainingBlock.BlockName)
             </td>
             <td>
-                <a asp-page="../Exercises/Create" asp-route-id="@item.WorkoutID">Add Exercise</a> |
-                <a asp-page="./Edit" asp-route-id="@item.WorkoutID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.WorkoutID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.WorkoutID">Delete</a>
+                <a asp-page="../Exercises/Create" asp-route-id="@item.WorkoutID"><i class="fas fa-plus-square fa-2x pr-4 text-black-50"></i></a>
+                <a asp-page="./Edit" asp-route-id="@item.WorkoutID"><i class="fas fa-edit fa-2x pr-3 text-black-50"></i></a>
+                <a asp-page="./Details" asp-route-id="@item.WorkoutID"><i class="fas fa-info-circle fa-2x pr-4 text-black-50"></i></a>
+                <a asp-page="./Delete" asp-route-id="@item.WorkoutID"><i class="fas fa-trash-alt fa-2x text-black-50"></i></a>
             </td>
         </tr>
 }

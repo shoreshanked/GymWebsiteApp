@@ -6,31 +6,57 @@
     <title>@ViewData["Title"] - GymWebsite</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
 </head>
+
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-inverse navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">GymWebsite</a>
+                <a class="navbar-brand text-white mr-auto" asp-area="" asp-page="/Index">Home</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between m-auto">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/TrainingBlocks/Index">Training Blocks</a>
+                        <li class="nav-item text-sm-center mr-auto">
+                            <a class="nav-link text-white ml-3" asp-area="" asp-page="/TrainingBlocks/Index">Training Blocks</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Workouts/Index">Workouts</a>
+                        <li class="nav-item mr-auto">
+                            <a class="nav-link text-white ml-3" asp-area="" asp-page="/Workouts/Index">Workouts</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Exercises/Index">Exercises</a>
+                        <li class="nav-item mr-auto">
+                            <a class="nav-link text-white ml-3" asp-area="" asp-page="/Exercises/Index">Exercises</a>
                         </li>
                     </ul>
                 </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end m-auto">
+                    <ul class="navbar-nav navbar-right">
+                        <li class="mr-auto">
+                            <a class="nav-link text-white ml-3" asp-area="" asp-page=""><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                        </li>
+                        <li class="mr-auto">
+                            <a class="nav-link text-white ml-3" asp-area="" asp-page="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        </li>
+                        <li class="mr-auto">
+                            <a class="nav-link text-white ml-3 pt-1 pb-1" asp-area="" asp-page="/UserProfiles/Index"><img class="rounded-circle" src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="Profile" data-toggle="tooltip" title="Profile" style="width:50px;"></a>
+                        </li>
+                        
+                    </ul>
+                </div>
             </div>
-        </nav>
+        </nav> 
     </header>
     <div class="container">
         <main role="main" class="pb-3">

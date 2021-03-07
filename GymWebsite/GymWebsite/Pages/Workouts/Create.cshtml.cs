@@ -19,9 +19,23 @@ namespace GymWebsite.Pages.Workouts
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int? id)
         {
-        ViewData["BlockName"] = new SelectList(_context.TrainingBlock, "TrainingBlockID", "BlockName");
+
+            if (id != null)
+            {
+                TempData["id"] = id;
+
+                var trainingBlock = _context.TrainingBlock.FirstOrDefault(w => w.TrainingBlockID == id);
+                ViewData["BlockName"] = trainingBlock.BlockName;
+            }
+            else
+            {
+                // if the ID is null then we need to hide the text input in HTML and show a select list for them to choose manually, using the below
+                //ViewData["BlockName"] = new SelectList(_context.TrainingBlock, "TrainingBlockID", "BlockName");
+            }
+            
+
             return Page();
         }
 
@@ -29,8 +43,9 @@ namespace GymWebsite.Pages.Workouts
         public Workout Workout { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int id)
         {
+            Workout.TrainingBlockID = id;
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -39,7 +54,7 @@ namespace GymWebsite.Pages.Workouts
             _context.Workout.Add(Workout);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { id = id });
         }
     }
 }

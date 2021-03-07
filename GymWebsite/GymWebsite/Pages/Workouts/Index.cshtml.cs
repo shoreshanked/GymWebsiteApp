@@ -21,10 +21,22 @@ namespace GymWebsite.Pages.Workouts
 
         public IList<Workout> Workout { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int? id)
         {
-            Workout = await _context.Workout
-                .Include(w => w.TrainingBlock).ToListAsync();
+
+            if (id != null)
+            {
+                Workout = await _context.Workout
+                                .Include(e => e.TrainingBlock)
+                                .Where(w => w.TrainingBlockID == id)
+                                .ToListAsync();
+            }
+            else
+            {
+                Workout = await _context.Workout
+                                .Include(e => e.TrainingBlock).ToListAsync();
+            }
         }
+
     }
 }

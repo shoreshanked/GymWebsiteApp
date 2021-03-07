@@ -23,7 +23,27 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TrainingBlock.User.FirstName)
         </dd>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>Workouts</th>
+                    <th>Exercises</th>
+                </tr>
+                @foreach (var item in Model.TrainingBlock.Workouts)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WorkoutName)
+                    </td>
+                    <td>
+                        <div><a asp-page="/Workouts/Details" asp-route-id="@item.WorkoutID">View Workout Details</a></div>
+                    </td>
+                </tr>
+                }
+            </table>
+        </dd>
     </dl>
+    
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.TrainingBlock.TrainingBlockID">Edit</a> |
