@@ -13,16 +13,25 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div runat="server" id="blockNameTextInput" class="form-group">
                 <label asp-for="Workout.TrainingBlock.BlockName" class="control-label"></label>
                 <!--<select asp-for="Workout.TrainingBlockID" class="form-control" asp-items="ViewBag.BlockName"></select>-->
-                <input asp-for="@ViewData["BlockName"]" disabled="disabled" class="form-control" asp-items="ViewBag.BlockName" />
+                @if (@TempData["id"] == null)
+                {
+                    <select asp-for="Workout.TrainingBlockID" class="form-control" asp-items="ViewBag.BlockName"></select>
+
+                }
+                else
+                {
+                    <input asp-for="@ViewData["BlockName"]" disabled="disabled" class="form-control" asp-items="ViewBag.BlockName" />
+                }
             </div>
             <div class="form-group">
                 <label asp-for="Workout.WorkoutName" class="control-label"></label>
                 <input asp-for="Workout.WorkoutName" class="form-control" />
                 <span asp-validation-for="Workout.WorkoutName" class="text-danger"></span>
             </div>
+           
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -31,8 +40,17 @@
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
-</div>
+    @if (@TempData["id"] == null)
+    {
+        <a asp-page="Index">Back to Workouts</a>
+    }
+    else
+    { 
+            <a asp-page="../TrainingBlocks/Index">Back to Training Blocks</a>
+            <a asp-page="Index">Back to Workouts</a>
+    }
+
+    </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

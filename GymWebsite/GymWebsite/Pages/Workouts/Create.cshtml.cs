@@ -30,9 +30,10 @@ namespace GymWebsite.Pages.Workouts
                 ViewData["BlockName"] = trainingBlock.BlockName;
             }
             else
-            {
+            { 
                 // if the ID is null then we need to hide the text input in HTML and show a select list for them to choose manually, using the below
-                //ViewData["BlockName"] = new SelectList(_context.TrainingBlock, "TrainingBlockID", "BlockName");
+                ViewData["BlockName"] = new SelectList(_context.TrainingBlock, "TrainingBlockID", "BlockName");
+               
             }
             
 

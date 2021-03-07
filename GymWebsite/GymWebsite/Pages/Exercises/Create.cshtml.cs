@@ -32,7 +32,7 @@ namespace GymWebsite.Pages.Exercises
             else
             {
                 // if the ID is null then we need to hide the text input in HTML and show a select list for them to choose manually, using the below
-                //ViewData["WorkoutName"] = new SelectList(_context.Workout, "WorkoutID", "WorkoutName");
+                ViewData["WorkoutName"] = new SelectList(_context.Workout, "WorkoutID", "WorkoutName");
             }
 
 
