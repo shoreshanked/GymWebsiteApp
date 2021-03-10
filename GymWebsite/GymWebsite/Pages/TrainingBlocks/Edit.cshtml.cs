@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GymWebsite.Data;
 using GymWebsite.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GymWebsite.Pages.TrainingBlocks
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly GymWebsite.Data.GymWebsiteContext _context;

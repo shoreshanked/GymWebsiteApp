@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using GymWebsite.Model;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace GymWebsite.Data
 {
-    public class GymWebsiteContext : DbContext
+    public class GymWebsiteContext : IdentityDbContext
     {
         public GymWebsiteContext (DbContextOptions<GymWebsiteContext> options)
             : base(options)

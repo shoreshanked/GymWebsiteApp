@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using GymWebsite.Data;
 using GymWebsite.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GymWebsite.Pages.Exercises
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly GymWebsite.Data.GymWebsiteContext _context;

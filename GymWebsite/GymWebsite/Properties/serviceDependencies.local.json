@@ -1,8 +1,12 @@
 {
   "dependencies": {
     "mssql1": {
+      "connectionID": "GymWebsiteContext",
+      "type": "mssql.local"
+    },
+    "mssql2": {
       "type": "mssql.local",
-      "connectionID": "GymWebsiteContext"
+      "connectionId": "GymWebsiteContext"
     }
   }
 }
