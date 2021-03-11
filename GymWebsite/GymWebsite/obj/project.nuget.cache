@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PQGCL6hNODI06ce7nxlmv5POh4sbh+lHV+wpHaOoK8DvLHxcHE8ozOc3gC3Lp1B/9ldBM2TByArL1yRQ7IVgFg==",
+  "dgSpecHash": "+Tyjv2wZaAV+aUpDGkmbS9sMdfZY3wABQ+q6Pnge47iDkgKE0ko0g3y2A6Qyc7cWGY98Nu+i4tinXBoMVFn0GQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Willi\\OneDrive\\Desktop\\Code Repository\\GymWebsiteApp\\GymWebsite\\GymWebsite\\GymWebsite.csproj",
   "expectedPackageFiles": [
@@ -69,10 +69,12 @@
     "C:\\Users\\Willi\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\Willi\\.nuget\\packages\\sendgrid\\9.22.0\\sendgrid.9.22.0.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
+    "C:\\Users\\Willi\\.nuget\\packages\\starkbank-ecdsa\\1.2.0\\starkbank-ecdsa.1.2.0.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\Willi\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

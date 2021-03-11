@@ -243,3 +243,5 @@ C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebs
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\GymWebsite.pdb
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\GymWebsite.genruntimeconfig.cache
 C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\obj\Debug\net5.0\GymWebsite.csprojAssemblyReference.cache
+C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\bin\Debug\net5.0\SendGrid.dll
+C:\Users\Willi\OneDrive\Desktop\Code Repository\GymWebsiteApp\GymWebsite\GymWebsite\bin\Debug\net5.0\StarkbankEcdsa.dll

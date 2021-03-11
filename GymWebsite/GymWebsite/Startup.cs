@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using GymWebsite.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using GymWebsite.Services;
 
 namespace GymWebsite
 {
@@ -27,7 +29,9 @@ namespace GymWebsite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            
+
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.Configure<AuthMessageSenderOptions>(Configuration);
 
             services.AddDbContext<GymWebsiteContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("GymWebsiteContext")));
