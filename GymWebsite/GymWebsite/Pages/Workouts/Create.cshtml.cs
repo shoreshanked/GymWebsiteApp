@@ -36,8 +36,7 @@ namespace GymWebsite.Pages.Workouts
                 // if the ID is null then we need to hide the text input in HTML and show a select list for them to choose manually, using the below
                 ViewData["BlockName"] = new SelectList(_context.TrainingBlock, "TrainingBlockID", "BlockName");
                
-            }
-            
+            }    
 
             return Page();
         }
@@ -46,9 +45,13 @@ namespace GymWebsite.Pages.Workouts
         public Workout Workout { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync(int id)
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
-            Workout.TrainingBlockID = id;
+            if (id != null)
+            {
+                Workout.TrainingBlockID = Convert.ToInt32(id);
+            }
+
             if (!ModelState.IsValid)
             {
                 return Page();
