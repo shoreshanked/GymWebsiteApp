@@ -60,7 +60,15 @@ namespace GymWebsite.Pages.Workouts
             _context.Workout.Add(Workout);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index", new { id = id });
+            if (id != null)
+            {
+                return RedirectToPage("../TrainingBlocks/Details", new { id = id });
+            }
+            else
+            {
+                return RedirectToPage("./Index");
+            }
+
         }
     }
 }

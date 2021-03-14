@@ -25,6 +25,16 @@
                 <span asp-validation-for="TrainingBlock.UserID" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="TrainingBlock.BlockStartDate" class="control-label"></label>
+                <input asp-for="TrainingBlock.BlockStartDate" type="date" class="form-control" />
+                <span asp-validation-for="TrainingBlock.BlockStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainingBlock.BlockEndDate" class="control-label"></label>
+                <input asp-for="TrainingBlock.BlockEndDate" type="date" class="form-control" />
+                <span asp-validation-for="TrainingBlock.BlockEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

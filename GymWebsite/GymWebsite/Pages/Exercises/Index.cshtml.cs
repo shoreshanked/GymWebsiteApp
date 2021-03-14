@@ -27,6 +27,7 @@ namespace GymWebsite.Pages.Exercises
         {
             if (id != null)
             {
+
                 Exercise = await _context.Exercise
                                 .Include(e => e.Workout)
                                 .Where(w => w.WorkoutID == id)

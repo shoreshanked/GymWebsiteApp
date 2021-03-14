@@ -8,9 +8,9 @@
     <script src="https://kit.fontawesome.com/a7acdedb07.js" crossorigin="anonymous"></script>
 </head>
 
-<h1>Index</h1>
+<h1 class="ml-3">Index</h1>
 
-<p>
+<p class="ml-3">
     <a asp-page="Create">Create New training Block</a>
 </p>
 @*<table class="table">
@@ -45,20 +45,43 @@
         }
     </tbody>
 </table>*@
-@foreach (var item in Model.TrainingBlock)
-{
-    <div class="card col-lg-3 col-sm-5 col-8 p-0 m-3">
-        <div class="card-header">
-            @Html.DisplayFor(modelItem => item.BlockName)
-        </div>
-        <div class="card-body">Content</div>
-        <div class="card-footer">
-            <div class="w-75 m-auto pl-3" >
-                <a asp-page="../Workouts/Create" asp-route-id="@item.TrainingBlockID"><i class="fas fa-plus-square fa-2x pr-4 text-black-50" data-toggle="tooltip" title="Add Workout to Block"></i></a>
-                <a asp-page="./Edit" asp-route-id="@item.TrainingBlockID"><i class="fas fa-edit fa-2x pr-3 text-black-50" data-toggle="tooltip" title="Edit Block"></i></a>
-                <a asp-page="./Details" asp-route-id="@item.TrainingBlockID"><i class="fas fa-info-circle fa-2x pr-4 text-black-50" data-toggle="tooltip" title="Block Info"></i></a>
-                <a asp-page="./Delete" asp-route-id="@item.TrainingBlockID"><i class="fas fa-trash-alt fa-2x text-black-50" data-toggle="tooltip" title="Delete Block"></i></a>
+<div class="d-flex justify-content-center flex-wrap">
+    @foreach (var item in Model.TrainingBlock)
+    {
+        <div class="card col-lg-3 col-sm-5 col-8 p-0 m-3">
+            <div class="card-header">
+                @Html.DisplayFor(modelItem => item.BlockName)
+            </div>
+            <div class="card-body ml-3">
+                <dl class="row">
+                    <dt class="">
+                        @Html.DisplayNameFor(modelItem => item.BlockStartDate)
+                    </dt>
+                    <dd class=" ml-2">
+                        @{
+                            string shortStartDate = item.BlockStartDate.ToShortDateString();
+                        }
+                        @Html.DisplayFor(modelItem => shortStartDate)
+                    </dd>
+                    <dt class="">
+                        @Html.DisplayNameFor(modelItem => item.BlockEndDate)
+                    </dt>
+                    <dd class="ml-2">
+                        @{ 
+                            string shortEndDate = item.BlockEndDate.ToShortDateString();
+                        }
+                        @Html.DisplayFor(modelItem => shortEndDate)
+                    </dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <div class="w-75 m-auto pl-3">
+                    <a asp-page="../Workouts/Create" asp-route-id="@item.TrainingBlockID"><i class="fas fa-plus-square fa-2x pr-4 text-black-50" data-toggle="tooltip" title="Add Workout to Block"></i></a>
+                    <a asp-page="./Edit" asp-route-id="@item.TrainingBlockID"><i class="fas fa-edit fa-2x pr-3 text-black-50" data-toggle="tooltip" title="Edit Block"></i></a>
+                    <a asp-page="./Details" asp-route-id="@item.TrainingBlockID"><i class="fas fa-info-circle fa-2x pr-4 text-black-50" data-toggle="tooltip" title="Block Info"></i></a>
+                    <a asp-page="./Delete" asp-route-id="@item.TrainingBlockID"><i class="fas fa-trash-alt fa-2x text-black-50" data-toggle="tooltip" title="Delete Block"></i></a>
+                </div>
             </div>
         </div>
-    </div>
-}
+    }
+</div>

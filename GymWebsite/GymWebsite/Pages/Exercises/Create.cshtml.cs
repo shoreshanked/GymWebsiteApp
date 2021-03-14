@@ -61,13 +61,11 @@ namespace GymWebsite.Pages.Exercises
                 TempData["id"] = id;
                 var workout = _context.Workout.FirstOrDefault(w => w.WorkoutID == id);
                 ViewData["WorkoutName"] = workout.WorkoutName;
-
             }
             else
             {
                 ViewData["WorkoutName"] = new SelectList(_context.Workout, "WorkoutID", "WorkoutName");
             }
-
 
             return Page();
         }
@@ -86,7 +84,6 @@ namespace GymWebsite.Pages.Exercises
             {
                 Exercise.WorkoutID = Convert.ToInt32(id);
             }
-            
              
             if (!ModelState.IsValid)
             {
@@ -96,7 +93,15 @@ namespace GymWebsite.Pages.Exercises
             _context.Exercise.Add(Exercise);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index", new { id = id });
+            if (id != null)
+            {
+                return RedirectToPage("../Workouts/Details", new { id = id });
+            }
+            else
+            {
+                return RedirectToPage("./Index");
+            }
+            
         }
     }
 

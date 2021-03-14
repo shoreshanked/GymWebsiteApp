@@ -24,6 +24,24 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TrainingBlock.User.FirstName)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TrainingBlock.BlockStartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @{
+                string shortStartDate = Model.TrainingBlock.BlockStartDate.ToShortDateString();
+            }
+            @Html.DisplayFor(model => model.TrainingBlock.BlockStartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @{
+                string shortEndDate = Model.TrainingBlock.BlockEndDate.ToShortDateString();
+            }
+            @Html.DisplayNameFor(model => model.TrainingBlock.BlockEndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TrainingBlock.BlockEndDate)
+        </dd>
     </dl>
     
     <form method="post">

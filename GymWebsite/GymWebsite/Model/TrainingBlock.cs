@@ -12,6 +12,12 @@ namespace GymWebsite.Model
 
         public string BlockName { get; set; }
 
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
+
+        public DateTime BlockStartDate { get; set; }
+
+        public DateTime BlockEndDate { get; set; }
+
         public  int UserID { get; set; }
 
         public User User { get; set; }

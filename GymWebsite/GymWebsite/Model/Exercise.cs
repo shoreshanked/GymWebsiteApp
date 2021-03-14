@@ -12,6 +12,8 @@ namespace GymWebsite.Model
         
         public int ExerciseID { get; set; }
 
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
+
         public int WorkoutID { get; set; }
 
         public string Name { get; set; }

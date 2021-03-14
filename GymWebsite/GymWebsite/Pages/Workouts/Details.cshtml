@@ -5,6 +5,10 @@
     ViewData["Title"] = "Details";
 }
 
+<head>
+    <script src="https://kit.fontawesome.com/a7acdedb07.js" crossorigin="anonymous"></script>
+</head>
+
 <h1>Details</h1>
 
 <div>
@@ -56,6 +60,8 @@
     </dl>
 </div>
 <div>
+    <a asp-page="../Exercises/Create" asp-route-id="@Model.Workout.WorkoutID"><i class="fas fa-plus-square fa-2x pr-4 text-black-50" data-toggle="tooltip" title="Add Exercise to Workout"></i></a>
+    <a asp-page="../TrainingBlocks/Details" asp-route-id="@Model.Workout.TrainingBlockID">Back to training Block</a>
     <a asp-page="./Edit" asp-route-id="@Model.Workout.WorkoutID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>
