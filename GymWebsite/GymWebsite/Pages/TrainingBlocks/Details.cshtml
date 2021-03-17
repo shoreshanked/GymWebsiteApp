@@ -7,7 +7,12 @@
 
 <head>
     <script src="https://kit.fontawesome.com/a7acdedb07.js" crossorigin="anonymous"></script>
+
 </head>
+
+<script>
+    var test = serializer[1].Key;
+</script>
 
 <h1>Details</h1>
 
@@ -65,10 +70,20 @@
             </table>
         </dd>
     </dl>
-    
+
 </div>
 <div>
     <a asp-page="../Workouts/Create" asp-route-id="@Model.TrainingBlock.TrainingBlockID"><i class="fas fa-plus-square fa-2x pr-4 text-black-50" data-toggle="tooltip" title="Add Workout to Training Block"></i></a>|
     <a asp-page="./Edit" asp-route-id="@Model.TrainingBlock.TrainingBlockID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>
+
+
+<div class="row">
+    <div class="col-12">
+        <canvas id="myChart" width="400" height="200"></canvas>
+    </div>
+</div>
+
+<script src="~/js/Chart.js" asp-append-version="true"></script>
+<script src="~/js/myChart.js" asp-append-version="true"></script>
