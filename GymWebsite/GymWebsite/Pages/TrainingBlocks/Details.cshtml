@@ -7,12 +7,7 @@
 
 <head>
     <script src="https://kit.fontawesome.com/a7acdedb07.js" crossorigin="anonymous"></script>
-
 </head>
-
-<script>
-    var test = serializer[1].Key;
-</script>
 
 <h1>Details</h1>
 
@@ -87,3 +82,10 @@
 
 <script src="~/js/Chart.js" asp-append-version="true"></script>
 <script src="~/js/myChart.js" asp-append-version="true"></script>
+
+<script>
+
+    var ExerciseJson = @Html.Raw(@ViewData["chartData"]);
+    myfunction(ExerciseJson);
+
+</script>

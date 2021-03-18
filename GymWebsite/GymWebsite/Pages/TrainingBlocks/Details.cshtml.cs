@@ -65,7 +65,9 @@ namespace GymWebsite.Pages.TrainingBlocks
             }
 
             var serializer = JsonSerializer.Serialize(ExerciseDictionary);
+            ViewData["chartData"] = serializer;
             
+
             Exercise = await _context.Exercise
                                 .Include(e => e.Workout)
                                 .Where(w => w.WorkoutID == id)

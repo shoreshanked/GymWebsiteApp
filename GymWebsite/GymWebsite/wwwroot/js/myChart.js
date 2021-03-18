@@ -1,4 +1,26 @@
-﻿var ctx = document.getElementById('myChart').getContext('2d');
+﻿function myfunction(json) {
+    console.log(json);
+
+    var array = [];
+
+    for (var i in json)
+        array.push([i, json[i]]);
+
+    var arrayLength = array.length;
+    for (var i = 0; i < arrayLength; i++) {
+
+            console.log(Object.values(array[i]));
+
+        array[i].forEach(function (item, index) {
+            
+        });
+    }
+
+    //console.log(array);
+}
+
+
+var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
