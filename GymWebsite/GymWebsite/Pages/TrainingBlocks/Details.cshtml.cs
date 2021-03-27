@@ -42,7 +42,6 @@ namespace GymWebsite.Pages.TrainingBlocks
                 .Where(m => m.TrainingBlockID == id)
                 .ToListAsync();
 
-
             IDictionary<String, List<Tuple<int, int, double>>> ExerciseDictionary = new Dictionary<String, List<Tuple<int, int, double>>>(); 
 
             foreach (Workout workout in Workouts)

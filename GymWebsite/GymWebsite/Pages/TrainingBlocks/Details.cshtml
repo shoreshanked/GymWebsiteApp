@@ -85,7 +85,7 @@
 
 <script>
 
-    var ExerciseJson = @Html.Raw(@ViewData["chartData"]);
-    myfunction(ExerciseJson);
+    var exercises = @Html.Raw(@ViewData["chartData"]);
+    buildExerciseArrays(exercises);
 
 </script>

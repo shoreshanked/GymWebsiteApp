@@ -1,44 +1,45 @@
-﻿function myfunction(json) {
+﻿function buildExerciseArrays(exercises) {
 
+    console.log(exercises);
     //todo : make fabian read this. Help us
     var benchArray = [];
     var squatArray = [];
     var deadArray = [];
 
-    if (json.hasOwnProperty("Bench Press")){
+    if (exercises.hasOwnProperty("Bench Press")){
         var j = 0;
         do {
-            benchArray.push(json["Bench Press"][j]["Item3"]);
+            benchArray.push(exercises["Bench Press"][j]["Item3"]);
             j = j + 1;
-        } while (j < json["Bench Press"].length && json["Bench Press"].length);
+        } while (j < exercises["Bench Press"].length && exercises["Bench Press"].length);
     }
     else {
         console.log("bad");
     }
 
-    if (json.hasOwnProperty("Squat")) {
+    if (exercises.hasOwnProperty("Squat")) {
         var x = 0;
         do {
-            squatArray.push(json["Squat"][x]["Item3"]);
+            squatArray.push(exercises["Squat"][x]["Item3"]);
             x = x + 1;
-        } while (x < json["Squat"].length && json["Squat"].length);
+        } while (x < exercises["Squat"].length && exercises["Squat"].length);
     }
     else {
         console.log("bad");
     }
 
-    if (json.hasOwnProperty("Deadlift")) {
+    if (exercises.hasOwnProperty("Deadlift")) {
         var z = 0;
         do {
-            deadArray.push(json["Deadlift"][z]["Item3"]);
+            deadArray.push(exercises["Deadlift"][z]["Item3"]);
             z = z + 1;
-        } while (z < json["Deadlift"].length);
+        } while (z < exercises["Deadlift"].length);
     }
     else {
         console.log("bad");
     }
 
-    if (!json.hasOwnProperty("Deadlift") && !json.hasOwnProperty("Bench Press") && !json.hasOwnProperty("Squat")) {
+    if (!exercises.hasOwnProperty("Deadlift") && !exercises.hasOwnProperty("Bench Press") && !exercises.hasOwnProperty("Squat")) {
 
     }
     else {
@@ -57,7 +58,7 @@ function labelMaker(benchArray, squatArray, deadArray) {
     var labels = [];
     
     for (i = 1; i <= max; i++) {
-        labels.push("Workout" + i)
+        labels.push("Workout " + i)
     }
 
     return labels
@@ -67,11 +68,11 @@ function buildChart(benchArray, squatArray, deadArray) {
     var ctx = document.getElementById('myChart').getContext('2d');
 
     var labels = labelMaker(benchArray, squatArray, deadArray);
-
+    
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: labels,
+            labels: labels, 
             datasets: [{
                 label: 'Bench',
                 data: benchArray,
