@@ -42,24 +42,31 @@ namespace GymWebsite.Pages.TrainingBlocks
                 .Where(m => m.TrainingBlockID == id)
                 .ToListAsync();
 
-            IDictionary<String, List<Tuple<int, int, double>>> ExerciseDictionary = new Dictionary<String, List<Tuple<int, int, double>>>(); 
+            IDictionary<String, List<Tuple<int, int, double, DateTime>>> ExerciseDictionary = new Dictionary<String, List<Tuple<int, int, double, DateTime>>>();
+            List<Exercise> exerciseList = new List<Exercise>();
 
+            //creates a single list of exercises
             foreach (Workout workout in Workouts)
             {
                 foreach(Exercise exercise in workout.Exercises)
                 {
-                    var tuple = new List<Tuple<int, int, double>>();
+                    exerciseList.Add(exercise);
+                }
+            } 
 
-                    if (ExerciseDictionary.ContainsKey(exercise.Name))
-                    {
-                        tuple = ExerciseDictionary[exercise.Name];
-                        tuple.Add(Tuple.Create(exercise.Reps, exercise.Sets, exercise.Weight));
-                    }
-                    else
-                    {
-                        tuple.Add(Tuple.Create(exercise.Reps, exercise.Sets, exercise.Weight));
-                        ExerciseDictionary.Add(exercise.Name, tuple);
-                    }
+            foreach (var exercise in exerciseList.OrderBy(x => x.CreatedDate).ToList())
+            {
+                var tuple = new List<Tuple<int, int, double, DateTime>>();
+
+                if (ExerciseDictionary.ContainsKey(exercise.Name))
+                {
+                    tuple = ExerciseDictionary[exercise.Name];
+                    tuple.Add(Tuple.Create(exercise.Reps, exercise.Sets, exercise.Weight, exercise.CreatedDate));
+                }
+                else
+                {
+                    tuple.Add(Tuple.Create(exercise.Reps, exercise.Sets, exercise.Weight, exercise.CreatedDate));
+                    ExerciseDictionary.Add(exercise.Name, tuple);
                 }
             }
 
